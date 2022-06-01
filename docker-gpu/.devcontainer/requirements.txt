@@ -1,0 +1,17 @@
+keras
+tensorflow
+tensorflow-addons
+pandas
+numpy
+Pillow
+protobuf
+six
+tensorboardX
+scipy
+matplotlib
+seaborn
+lightgbm
+xgboost
+scikit-learn
+tqdm
+opencv-python
