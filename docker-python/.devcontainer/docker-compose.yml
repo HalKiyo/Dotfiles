@@ -1,0 +1,17 @@
+version: "3.7"
+services:
+    py38:
+        build: 
+            dockerfile: ./Dockerfile
+        env_file: 
+            - ./.env_wslg
+        restart: always
+        tty: true
+        image: py38
+        container_name: 'py38'
+        working_dir: '/docker/home/hasegawa/'
+        volumes:
+            - /:/docker
+            - /mnt/wslg:/mnt/wslg
+            - /tmp/.X11-unix:/tmp/.X11-unix
+
