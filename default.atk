@@ -1,0 +1,139 @@
+#InstallKeybdHook
+#UseHook
+
+#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
+; #Warn  ; Enable warnings to assist with detecting common errors.
+SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
+SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
+
+<#Space:: Send, !{space} 
+!Space:: Return
+
+AppsKey:: RControl
+>#:: RControl
+
+>!1:: Send, {F1}
+>!2:: Send, {F2}
+>!3:: Send, {F3}
+>!4:: Send, {F4}
+>!5:: Send, {F5}
+<!6:: Send, {F6}
+<!7:: Send, {F7}
+<!8:: Send, {F8}
+<!9:: Send, {F9}
+<!0:: Send, {F10}
+<!-:: Send, {F11}
+<!=:: Send, {F12}
+
+>!q:: Send {!}
+>!w:: Send, {@}
+>!e:: Send, {#}
+>!r:: Send, {$}
+>!t:: Send, +{5}
+
+<!q:: Send {Left}
+<!w:: Send, {Down}
+<!e:: Send, {Up}
+<!r:: Send, {Right}
+<!t:: Send, {Volume_Mute}
+
+<!y:: Send, {^}
+<!u:: Send, {&}
+<!i:: Send, {*}
+<!o:: Send, {(}
+<!p:: Send, {)}
+
+>!y:: Send, !{f4}
+>!u:: Send, {Left}
+>!i:: Send, {Down}
+>!o:: Send, {Up}
+>!p:: Send, {Right}
+
+>!a:: Send, {=}
+>!s:: Send, {-}
+>!d:: Send, {+}
+>!f:: Send, {_}
+>!g:: Send, {[}
+
+<!a:: Send, {1}
+<!s:: Send, {2}
+<!d:: Send, {3}
+<!f:: Send, {4}
+<!g:: Send, {5}
+
+<!h:: Send, {]}
+<!j:: Send, {"}
+<!k:: Send, {'}
+<!l:: Send, {;}
+<!;:: Send, {:}
+
+>!h:: Send, {6}
+>!j:: Send, {7}
+>!k:: Send, {8}
+>!l:: Send, {9}
+>!;:: Send, {0}
+
+>!z:: Send,{``}
+>!x:: Send, {|}
+>!c:: Send, {\}
+>!v:: Send, {~}
+>!b:: Send, {{}
+
+<!z:: Send, {Home}
+<!x:: Send, {Delete}
+<!c:: Send, {End}
+<!v:: Send, {5}
+<!b:: Send, {5}
+
+<!n:: Send, {}}
+<!m:: Send, {}}
+<!,:: Send, {<}
+<!.:: Send, {>}
+<!/:: Send, {?}
+
+>!n:: Send, {6}
+>!m:: Send, {6}
+>!,:: Send, {F6}
+>!.:: Send, {F11}
+>!/:: Send, {F5}
+
++>!,:: Send, +{F6}
++>!.:: Send, +{F11}
++>!/:: Send, +{F5}
+
++<!q:: Send, +{Left}
++<!w:: Send, +{Down}
++<!e:: Send, +{Up}
++<!r:: Send, +{Right}
++>!u:: Send, +{Left}
++>!i:: Send, +{Down}
++>!o:: Send, +{Up}
++>!p:: Send, +{Right}
++<!z:: Send, +{Home}
++<!c:: Send, +{End}
+
+#<!q:: Send, #{Left}
+#<!w:: Send, #{Down}
+#<!e:: Send, #{Up}
+#<!r:: Send, #{Right}
+#>!u:: Send, #{Left}
+#>!i:: Send, #{Down}
+#>!o:: Send, #{Up}
+#>!p:: Send, #{Right}
+#<!z:: Send, #{Home}
+#<!c:: Send, #{End}
+
++!a:: Send, ^{-}
++!s:: Send, ^{=}
++!h:: Send, ^{[}
++!l:: Send, ^{]}
+
+~*LShift Up::
+If (A_PriorKey = "LShift")
+Send {Blind}{BackSpace}
+Return
+
+~*RShift Up::
+If (A_PriorKey = "RShift")
+Send {Blind}{Escape}
+Return
