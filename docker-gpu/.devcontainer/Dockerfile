@@ -7,40 +7,16 @@ ENV NOTO_DIR /usr/share/fonts/opentype/notosans
 ## aptに時間がかなりかかるので、パッケージを絞っています。
 RUN apt update \
     && apt install -y \
-    # tzdata\
     wget \
     bzip2 \
-    # cmake \
-    # cmake-curses-gui \
-    # sqlite3 \
-    # ca-certificates \
-    # libglib2.0-0 \
-    # libxext6 \
-    # libsm6 \
-    # libxrender1 \
     git \
-    # mercurial \
-    # subversion \
-    # zsh \
-    # openssh-server \
-    # gcc \
-    # g++ \
-    # libatlas-base-dev \
-    # libboost-dev \
-    # libboost-system-dev \
-    # libboost-filesystem-dev \
     curl \
-    # make \
     unzip \
     vim \
-    # ffmpeg \
-    # mecab \
-    # libmecab-dev \
-    # mecab-ipadic-utf8 \
     file \
     xz-utils \
     sudo \
-    python3 \
+    python3-tk \
     python3-pip \
     python3-opencv
 

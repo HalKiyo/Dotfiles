@@ -6,8 +6,10 @@ gpurun=-gpu
 down=-down
 containeridpy38=`docker ps -a | grep py38 | awk '{print $2}'`
 containeridconda=`docker ps -a | grep conda | awk '{print $2}'`
+containeridgpu=`docker ps -a | grep gpu | awk '{print $2}'`
 py38=py38
 conda=conda
+gpu=gpu
 #set -x
 if [ $1 = $pyrun ]; then
     cd ~/docker-python/.devcontainer
@@ -30,10 +32,15 @@ elif [ $1 = $condarun ]; then
     echo "conda activated"
     docker compose exec conda bash
 elif [ $1 = $gpurun ]; then
+    cd ~/docker-gpu/.devcontainer
+    if [ "$containeridgpu" != $gpu ]; then
+        echo "gpu built"
+        docker compose up -d --remove-orphans
+    else
+        echo "gpu already exit"
+    fi
     echo "gpu activated"
-    docker run --rm -it --shm-size=48GB \
-        --gpus all --mount type=bind,source=/,target=/docker \
-        -t gpu:latest
+    docker compose exec conda bash
 elif [ $1 = $down ]; then
     if [ "$containeridpy38" = $py38 ]; then
         cd ~/docker-python/.devcontainer
@@ -43,8 +50,12 @@ elif [ $1 = $down ]; then
         cd ~/docker-conda/.devcontainer
         echo "conda deactivated"
         docker compose down
+    elif [ "$containeridgpu" = $gpu ]; then
+        cd ~/docker-gpu/.devcontainer
+        echo "gpu deactivated"
+        docker compose down
     fi
-else 
+else
     echo "ERROR"
     echo "-py38"
     echo "-conda"
