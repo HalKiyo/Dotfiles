@@ -1,14 +1,13 @@
-version: '3'
 services:
     conda:
         build:
             dockerfile: ./Dockerfile
+        image: conda
         env_file:
             - ./.env.wslg
         restart: always
         working_dir: '/docker/home/hasegawa/'
         tty: true
-        image: conda
         container_name: 'conda'
         volumes:
             - /:/docker

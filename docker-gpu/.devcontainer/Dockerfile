@@ -1,10 +1,8 @@
-FROM nvidia/cuda:11.4.0-cudnn8-devel-ubuntu20.04
+FROM nvidia/cuda:11.3.0-cudnn8-devel-ubuntu20.04
 
-ENV DEBIAN_FRONTEND=noninteractive 
+ENV DEBIAN_FRONTEND=noninteractive
 ENV TERM=linux
-ENV NOTO_DIR /usr/share/fonts/opentype/notosans
 
-## aptに時間がかなりかかるので、パッケージを絞っています。
 RUN apt update \
     && apt install -y \
     wget \
@@ -19,12 +17,6 @@ RUN apt update \
     python3-tk \
     python3-pip \
     python3-opencv
-
-RUN mkdir -p ${NOTO_DIR} &&\
-  wget -q https://noto-website-2.storage.googleapis.com/pkgs/NotoSansCJKjp-hinted.zip -O noto.zip &&\
-  unzip ./noto.zip -d ${NOTO_DIR}/ &&\
-  chmod a+r ${NOTO_DIR}/NotoSans* &&\
-  rm ./noto.zip
 
 # remove cache files
 RUN apt-get autoremove -y && apt-get clean && \

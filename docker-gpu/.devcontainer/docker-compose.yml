@@ -1,21 +1,20 @@
-version: '3'
-
 services:
     gpu:
         build:
             dockerfile: ./Dockerfile
+        image: gpu
         deploy:
             resources:
                 reservations:
                     devices:
                     - driver: nvidia
+                      count: 1
                       capabilities: [gpu]
         env_file:
             - ./.env_wslg
         restart: always
         working_dir: '/docker/home/hasegawa/docker-gpu/'
         tty: true
-        image: 'gpu'
         container_name: 'gpu'
         volumes:
             - /:/docker

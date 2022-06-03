@@ -2,9 +2,9 @@ keras
 tensorflow
 tensorflow-addons
 pandas
-numpy
+numpy==1.22.4
 Pillow
-protobuf
+protobuf==3.19
 six
 tensorboardX
 scipy
