@@ -117,6 +117,9 @@ if ! shopt -oq posix; then
 fi
 
 #user profile
+#error color scheme
+color()(set -o pipefail;"$@" 2> >(sed $'s,.*,\e[31m&\e[m,'>&2))
+
 #alias
 alias ..='cd ..'
 alias ls='ls --color'
@@ -124,9 +127,6 @@ alias ll='ls -alh --color'
 alias rm='rm -rfi'
 alias vi='vim'
 alias python='color python3'
-
-#error color scheme
-color()(set -o pipefail;"$@" 2> >(sed $'s,.*,\e[31m&\e[m,'>&2))
 
 #power shell
 eval "$(oh-my-posh-wsl --init --shell bash --config /mnt/c/Users/hasegawa/AppData/Local/Programs/oh-my-posh/themes/tonybaloney.omp.json)"
