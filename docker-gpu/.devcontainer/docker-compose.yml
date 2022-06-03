@@ -1,17 +1,17 @@
 version: '3'
+
 services:
     gpu:
+        build:
+            dockerfile: ./Dockerfile
         deploy:
             resources:
                 reservations:
                     devices:
-                        - driver: nvidia
-                        - count: 1
-                        - capabilities: [gpu]
-        build:
-            dockerfile: ./Dockerfile
+                    - driver: nvidia
+                      capabilities: [gpu]
         env_file:
-            - ./.env.wslg
+            - ./.env_wslg
         restart: always
         working_dir: '/docker/home/hasegawa/docker-gpu/'
         tty: true

@@ -40,7 +40,7 @@ elif [ $1 = $gpurun ]; then
         echo "gpu already exit"
     fi
     echo "gpu activated"
-    docker compose exec conda bash
+    docker compose exec gpu bash
 elif [ $1 = $down ]; then
     if [ "$containeridpy38" = $py38 ]; then
         cd ~/docker-python/.devcontainer
