@@ -1,0 +1,26 @@
+services:
+    jupyter:
+        build:
+            dockerfile: ./Dockerfile
+        image: jupyter
+        deploy:
+            resources:
+                reservations:
+                    devices:
+                    - driver: nvidia
+                      count: 1
+                      capabilities: [gpu]
+        env_file:
+            - ./.env_wslg
+        restart: always
+        working_dir: '/docker/home/hasegawa/docker-jupyter/'
+        tty: true
+        container_name: 'jupyter'
+        expose:
+            - "8888"
+        ports:
+            - "127.0.0.1:8888:8888"
+        volumes:
+            - /:/docker
+            - /mnt/wslg:/mnt/wslg
+            - /tmp/.X11-unix:/tmp/.X11-unix

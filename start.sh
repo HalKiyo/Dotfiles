@@ -3,13 +3,16 @@
 pyrun=-py38
 condarun=-conda
 gpurun=-gpu
+jupyterrun=-jupyter
 down=-down
 containeridpy38=`docker ps -a | grep py38 | awk '{print $2}'`
 containeridconda=`docker ps -a | grep conda | awk '{print $2}'`
 containeridgpu=`docker ps -a | grep gpu | awk '{print $2}'`
+containeridjupyter=`docker ps -a | grep jupyter | awk '{print $2}'`
 py38=py38
 conda=conda
 gpu=gpu
+jupyter=jupyter
 #set -x
 if [ $1 = $pyrun ]; then
     cd ~/docker-python/.devcontainer
@@ -41,6 +44,16 @@ elif [ $1 = $gpurun ]; then
     fi
     echo "gpu activated"
     docker compose exec gpu bash
+elif [ $1 = $jupyterrun ]; then
+    cd ~/docker-jupyter/.devcontainer
+    if [ "$containeridjupyter" != $jupyter ]; then
+        echo "jupyter built"
+        docker compose up -d --remove-orphans
+    else
+        echo "jupyter already exit"
+    fi
+    echo "jupyter activated"
+    docker compose exec jupyter bash
 elif [ $1 = $down ]; then
     if [ "$containeridpy38" = $py38 ]; then
         cd ~/docker-python/.devcontainer
@@ -54,12 +67,18 @@ elif [ $1 = $down ]; then
         cd ~/docker-gpu/.devcontainer
         echo "gpu deactivated"
         docker compose down
+    elif [ "$containeridgpu" = $jupyter ]; then
+        cd ~/docker-jupyter/.devcontainer
+        echo "jupyter deactivated"
+        docker compose down
     fi
 else
     echo "ERROR"
     echo "-py38"
     echo "-conda"
     echo "-gpu"
+    echo "-jupyternotebook"
+    echo "-jupyternotelab"
     echo "-down"
     echo "available_option"
 fi
