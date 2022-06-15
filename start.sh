@@ -77,8 +77,7 @@ else
     echo "-py38"
     echo "-conda"
     echo "-gpu"
-    echo "-jupyternotebook"
-    echo "-jupyternotelab"
+    echo "-jpyter"
     echo "-down"
     echo "available_option"
 fi
