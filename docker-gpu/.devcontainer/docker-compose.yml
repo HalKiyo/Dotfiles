@@ -2,6 +2,7 @@ services:
     gpu:
         build:
             dockerfile: ./Dockerfile
+        shm_size: '48gb'
         image: gpu
         deploy:
             resources:

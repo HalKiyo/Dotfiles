@@ -135,3 +135,8 @@ eval "$(oh-my-posh-wsl --init --shell bash --config /mnt/c/Users/hasegawa/AppDat
 export ftp_proxy=proxy.noc.titech.ac.jp:3128
 export http_proxy=proxy.noc.titech.ac.jp:3128
 export https_proxy=proxy.noc.titech.ac.jp:3128
+
+# nvm path and setting
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

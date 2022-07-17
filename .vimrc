@@ -53,16 +53,30 @@ vnoremap v <C-v>
 nnoremap Y y$
 nnoremap <Esc><Esc> :nohlsearch<CR><ESC>
 
-"call plug#begin('/home/hasegawa/.vim/plugged')
-"
-"Plug 'morhetz/gruvbox'
+
+
+call plug#begin('/home/hasegawa/.vim/plugged')
+
+Plug 'morhetz/gruvbox'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'vim-python/python-syntax'
 "Plug 'vim-airline/vim-airline'
 "Plug 'vim-airline/vim-airline-themes'
-"
-"call plug#end()
-"
-"colorscheme gruvbox
 
+call plug#end()
+
+
+" #######configration of gruvbox#######
+colorscheme gruvbox
 set background=dark
+
 highlight StatusLine ctermbg=Yellow ctermfg=DarkGray guifg=darkblue guibg=yellow
 highlight LineNr ctermfg=0*
+
+" #######configration of coc.nvim######
+set encoding=utf-8
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+" #######configration of python-syntax#######
+let g:python_highlight_all = 1

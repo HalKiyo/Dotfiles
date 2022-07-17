@@ -6,7 +6,7 @@ services:
         env_file:
             - ./.env.wslg
         restart: always
-        working_dir: '/docker/home/hasegawa/'
+        working_dir: '/docker/home/hasegawa/docker-conda'
         tty: true
         container_name: 'conda'
         volumes:
