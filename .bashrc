@@ -116,7 +116,10 @@ if ! shopt -oq posix; then
   fi
 fi
 
-#user profile
+######user profile######
+#mounted windows folder color scheme
+eval $(dircolors -b ~/.dircolors)
+
 #error color scheme
 color()(set -o pipefail;"$@" 2> >(sed $'s,.*,\e[31m&\e[m,'>&2))
 
@@ -127,6 +130,10 @@ alias ll='ls -alh --color'
 alias rm='rm -rfi'
 alias vi='vim'
 alias python='color python3'
+alias py38='sh ~/start.sh -py38'
+alias conda='sh ~/start.sh -conda'
+alias jupyter='sh ~/start.sh -jupyter'
+alias gpu='sh ~/start.sh -gpu'
 
 #power shell
 eval "$(oh-my-posh-wsl --init --shell bash --config /mnt/c/Users/hasegawa/AppData/Local/Programs/oh-my-posh/themes/tonybaloney.omp.json)"
@@ -141,5 +148,5 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-#mounted windows folder color change
-eval $(dircolors -b ~/.dircolors)
+#fzf path
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

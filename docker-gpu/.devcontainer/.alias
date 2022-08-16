@@ -1,0 +1,18 @@
+#error color scheme
+color()(set -o pipefail;"$@" 2> >(sed $'s,.*,\e[31m&\e[m,'>&2))
+
+#alias
+alias ..='cd ..'
+alias ls='ls --color'
+alias ll='ls -alh --color'
+alias rm='rm -rfi'
+alias vi='vim'
+alias python='color python3'
+
+#powerline configuration
+if [ -f /usr/share/powerline/bindings/bash/powerline.sh ]; then
+    powerline-daemon -q
+    POWERLINE_BASH_CONTINUATION=1
+    POWERLINE_BASH_SELECT=1
+    source /usr/share/powerline/bindings/bash/powerline.sh
+fi

@@ -11,6 +11,7 @@ RUN apt update \
     curl \
     unzip \
     vim \
+    powerline \
     file \
     xz-utils \
     sudo \
@@ -26,6 +27,10 @@ COPY requirements.txt /tmp/
 
 RUN pip install --no-cache-dir -U pip setuptools wheel \
     && pip install --no-cache-dir -r /tmp/requirements.txt
+
+# alias copy
+COPY ./.alias /root
+RUN cat /root/.alias >> /root/.bashrc
 
 # pythorch is installed manually. Not with requirements.txt
 RUN pip3 install torch==1.10.0+cu113 torchvision==0.11.1+cu113 \

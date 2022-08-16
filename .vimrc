@@ -60,6 +60,9 @@ call plug#begin('/home/hasegawa/.vim/plugged')
 Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'vim-python/python-syntax'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
 "Plug 'vim-airline/vim-airline'
 "Plug 'vim-airline/vim-airline-themes'
 
@@ -80,3 +83,12 @@ nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
 " #######configration of python-syntax#######
 let g:python_highlight_all = 1
+
+" #######configration of fzf######
+let $FZF_DEFAULT_OPTS="--layout=reverse"
+let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8, 'yoffset': 0.5, 'xoffset': 0.5, 'border': 'sharp' } }
+nnoremap <silent> <leader>f :Files<CR>
+nnoremap <silent> <leader>g :GFiles<CR>
+nnoremap <silent> <leader>b :Buffers<CR>
+nnoremap <silent> <leader>h :History<CR>
+nnoremap <silent> <leader>r :Rg<CR>

@@ -15,6 +15,7 @@ RUN apt-get clean && \
     sudo \
     git \
     vim \
+    powerline \
     python3-tk \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
@@ -62,3 +63,7 @@ RUN cd /tmp && \
     $CONDA_TMP_DIR/bin/conda env create -f /tmp/conda_packages.yml -p $CONDA_DIR && \
     rm -rf $HOME/.cache/* && \
     rm -rf $CONDA_TMP_DIR/*
+
+# alias copy
+COPY ./.alias /root
+RUN cat /root/.alias >> /root/.bashrc
