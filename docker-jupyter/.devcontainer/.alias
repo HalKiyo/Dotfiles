@@ -8,8 +8,8 @@ alias ll='ls -alh --color'
 alias rm='rm -rfi'
 alias vi='vim'
 alias python='color python3'
-alias notebook='sh ~/jupyter.sh -notebook'
-alias lab='sh ~/jupyter.sh -lab'
+alias notebook='sh /docker/home/hasegawa/docker-jupyter/jupyter.sh -notebook'
+alias lab='sh /docker/home/hasegawa/docker-jupyter/jupyter.sh -lab'
 
 #powerline configuration
 if [ -f /usr/share/powerline/bindings/bash/powerline.sh ]; then

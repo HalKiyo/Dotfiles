@@ -135,11 +135,19 @@ alias py38='sh ~/start.sh -py38'
 alias conda='sh ~/start.sh -conda'
 alias jupyter='sh ~/start.sh -jupyter'
 alias gpu='sh ~/start.sh -gpu'
+alias down='sh ~/start.sh -down'
 
 alias gs='git status'
+alias gb='git branch'
+alias gc='git checkout'
 alias gau='git add -u' #変更されたfileをadd
 alias gcm='git commit -m'
-alias gpm='git push -u origin HEAD' #現在のbranchの最新のcommitをpush
+alias gpsoh='git push -u origin HEAD' #現在のbranchの最新のcommitをpush
+
+alias dps='docker ps'
+alias dimg='docker images'
+alias drm='docker rm -f'
+alias drmi='docker rmi -f'
 
 #power shell
 eval "$(oh-my-posh-wsl --init --shell bash --config /mnt/c/Users/hasegawa/AppData/Local/Programs/oh-my-posh/themes/tonybaloney.omp.json)"
