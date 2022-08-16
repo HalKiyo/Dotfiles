@@ -136,7 +136,10 @@ export ftp_proxy=proxy.noc.titech.ac.jp:3128
 export http_proxy=proxy.noc.titech.ac.jp:3128
 export https_proxy=proxy.noc.titech.ac.jp:3128
 
-# nvm path and setting
+#nvm path and setting
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+#mounted windows folder color change
+eval $(dircolors -b ~/.dircolors)
