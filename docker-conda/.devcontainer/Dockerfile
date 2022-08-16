@@ -20,7 +20,6 @@ RUN apt-get clean && \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-
 # ローカルuser作成
 ARG USER_NAME=user
 ARG USER_UID=1000
@@ -65,5 +64,6 @@ RUN cd /tmp && \
     rm -rf $CONDA_TMP_DIR/*
 
 # alias copy
-COPY ./.alias /root
-RUN cat /root/.alias >> /root/.bashrc
+ARG ALIAS="./.alias"
+COPY $ALIAS /tmp/.alias
+RUN cat /tmp/.alias >> ~/.bashrc
