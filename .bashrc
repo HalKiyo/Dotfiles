@@ -130,10 +130,16 @@ alias ll='ls -alh --color'
 alias rm='rm -rfi'
 alias vi='vim'
 alias python='color python3'
+
 alias py38='sh ~/start.sh -py38'
 alias conda='sh ~/start.sh -conda'
 alias jupyter='sh ~/start.sh -jupyter'
 alias gpu='sh ~/start.sh -gpu'
+
+alias gs='git status'
+alias gau='git add -u' #変更されたfileをadd
+alias gcm='git commit -m'
+alias gpm='git push -u origin HEAD' #現在のbranchの最新のcommitをpush
 
 #power shell
 eval "$(oh-my-posh-wsl --init --shell bash --config /mnt/c/Users/hasegawa/AppData/Local/Programs/oh-my-posh/themes/tonybaloney.omp.json)"
