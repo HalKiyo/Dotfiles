@@ -63,9 +63,6 @@ Plug 'vim-python/python-syntax'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
-"Plug 'vim-airline/vim-airline'
-"Plug 'vim-airline/vim-airline-themes'
-
 call plug#end()
 
 
@@ -74,7 +71,6 @@ colorscheme gruvbox
 set background=dark
 
 highlight StatusLine ctermbg=Yellow ctermfg=DarkGray guifg=darkblue guibg=yellow
-highlight LineNr ctermfg=0*
 
 " #######configration of coc.nvim######
 set encoding=utf-8
