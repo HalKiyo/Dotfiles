@@ -54,7 +54,6 @@ nnoremap Y y$
 nnoremap <Esc><Esc> :nohlsearch<CR><ESC>
 
 
-
 call plug#begin('/home/hasegawa/.vim/plugged')
 
 Plug 'morhetz/gruvbox'
@@ -70,7 +69,6 @@ call plug#end()
 " #######configration of gruvbox#######
 colorscheme gruvbox
 set background=dark
-
 highlight StatusLine ctermbg=Yellow ctermfg=DarkGray guifg=darkblue guibg=yellow
 
 " #######configration of coc.nvim######
