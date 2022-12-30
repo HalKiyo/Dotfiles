@@ -36,6 +36,9 @@ alias ta='tmux a -t 0'
 
 alias bs='cat ~/.bashrc'
 
+alias nero='ssh -X hasegawa@192.168.100.200'
+alias xeno='ssh -X kajiyama@192.168.100.154'
+
 alias py38='sh ~/start.sh -py38'
 alias conda='sh ~/start.sh -conda'
 alias jupyter='sh ~/start.sh -jupyter'
