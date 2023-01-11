@@ -39,10 +39,6 @@ gpu:
         scikit-learn
         xgboost
         lightgbm
-        opencv-python
-        Pillow
-        seaborn
-        matplotlib
 
 jupyter: 
     ubuntu20.04
@@ -55,20 +51,20 @@ jupyter:
         - "127.0.0.1:8888:8888"
     modules:
         numpy=1.22.4
-        jupyterlab
         notebook
         RISE=5.7.1
+        jupyterlab
+        jupyterlab_vim
         keras
         tensorflow
-        tensorflow-addons
-        tensorboardX
+        cartopy
 
 ### how to use "docker commit" ###
 docker ps
 docker images
-#if you wanna replace existing image
+#if you wanna replace[update] existing image
     docker commit --pause=false [conainer name] [image name:latest]
-#if you wanna make new image
+#if you wanna create new image
     docker commit --pause=false [conainer name] [image name:0]
     cd ~/[image name]/.devcontainer
     vi docker-compose.yml
