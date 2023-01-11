@@ -11,11 +11,13 @@ RUN apt update \
     git \
     curl \
     unzip \
+    make \
+    sudo \
     vim \
     powerline \
+    libgeos-dev \
     file \
     xz-utils \
-    sudo \
     python3-tk \
     python3-pip \
     python3-opencv
@@ -41,3 +43,7 @@ RUN pip3 install torch==1.10.0+cu113 torchvision==0.11.1+cu113 \
 # copy alias
 COPY ./.alias /root
 RUN cat /root/.alias >> /root/.bashrc
+
+# install for cartopy with pip
+RUN yes | pip uninstall shapely
+RUN pip install shapely==1.7.1

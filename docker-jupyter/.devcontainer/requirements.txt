@@ -1,26 +1,35 @@
 black
 jupyterlab
-jupyterlab_code_formatter
+jupyterlab_vim
 jupyterlab-git
-lckr_jupyterlab-variableinspector
 jupyterlab_widgets
+jupyterlab_code_formatter
+lckr_jupyterlab-variableinspector
+
 jupyterthemes==0.20.0
 ipywidgets
 import-ipynb
 
+notebook
+plotly==5.0.0
+RISE==5.7.1
+
 numpy==1.22.4
 pandas
 scipy
-scikit-learn
+chardet
 pycaret
-matplotlib
-seaborn
-plotly==5.0.0
+netCDF4
 requests
 beautifulsoup4
 Pillow
 opencv-python
 
+matplotlib
+cartopy
+seaborn
+
+scikit-learn
 pydeps
 graphviz
 shap
@@ -36,6 +45,3 @@ tensorboardX
 tqdm
 six
 
-notebook
-plotly==5.0.0
-RISE==5.7.1
