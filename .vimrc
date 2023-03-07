@@ -17,8 +17,15 @@
 "vnoremap: ビジュアルモード
 "cnoremap: コマンドラインモード
 "inoremap: インサートモード
+"tnoremap: ターミナルモード
+"
+"terminalコマンドのprefixは<C-w>
+"https://uhoho.hatenablog.jp/entry/2021/07/30/061800
 
 syntax on
+
+set encoding=utf-8
+scriptencoding utf-8
 
 set nowritebackup
 set nobackup
@@ -72,7 +79,10 @@ inoremap <silent> jj <ESC>
 vnoremap v <C-v>
 nnoremap Y y$
 nnoremap <Esc><Esc> :nohlsearch<CR><ESC>
-nnoremap <silent> <leader>j :!python3 %<CR><ESC>
+nnoremap <silent> <leader>j <C-w>j :q<CR> :bo terminal ++open ++rows=10 python3 %<CR> <C-w>k
+nnoremap <silent> <leader>J :bo terminal ++open ++rows=10 python3 %<CR> <C-w>k
+nnoremap <silent> <leader>q <C-w>j :q!<CR> :q<CR>
+tnoremap <Esc> <C-w>N
 
 
 call plug#begin('/home/hasegawa/.vim/plugged')
@@ -92,7 +102,6 @@ set background=dark
 highlight StatusLine ctermbg=Yellow ctermfg=DarkGray guifg=darkblue guibg=yellow
 
 " #######configration of coc.nvim######
-set encoding=utf-8
 nnoremap <silent> <leader>g <Plug>(coc-diagnostic-prev)
 nnoremap <silent> <leader>G <Plug>(coc-diagnostic-next)
 
@@ -103,7 +112,7 @@ let g:python_highlight_all = 1
 let $FZF_DEFAULT_OPTS="--layout=reverse"
 let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8, 'yoffset': 0.5, 'xoffset': 0.5, 'border': 'sharp' } }
 nnoremap <silent> <leader>f :Files<CR>
-"nnoremap <silent> <leader>g :GFiles<CR>
+"nnoremap <silent> <leader>f :GFiles<CR>
 "nnoremap <silent> <leader>b :Buffers<CR>
 "nnoremap <silent> <leader>h :History<CR>
 "nnoremap <silent> <leader>r :Rg<CR>
