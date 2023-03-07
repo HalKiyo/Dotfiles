@@ -20,12 +20,12 @@
 "tnoremap: ターミナルモード
 "
 "terminalコマンドのprefixは<C-w>
-"https://uhoho.hatenablog.jp/entry/2021/07/30/061800
 
 syntax on
 
 set encoding=utf-8
 scriptencoding utf-8
+set confirm
 
 set nowritebackup
 set nobackup
