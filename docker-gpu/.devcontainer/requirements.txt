@@ -14,7 +14,7 @@ cartopy==0.21.0
 keras
 tensorflow
 tensorflow-addons
-protobuf==3.19
+protobuf==3.19.5
 tensorboardX
 lightgbm
 xgboost
