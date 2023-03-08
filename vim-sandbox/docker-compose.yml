@@ -1,0 +1,15 @@
+services:
+    vim-sandbox:
+        build:
+            dockerfile: ./Dockerfile
+        image: vim-sandbox
+        env_file:
+            - ./.env_wslg
+        restart: always
+        tty: true
+        container_name: 'vim-sandbox'
+        working_dir: '/docker/home/hasegawa/vim-sandbox'
+        volumes:
+            - /:/docker
+            - /mnt/wslg:/mnt/wslg
+            - /tmp/.X11-unix:/tmp/.X11-uni
