@@ -12,7 +12,7 @@ services:
                       count: 1
                       capabilities: [gpu]
         env_file:
-            - ./.env_wslg
+            - ./env_wslg
         restart: always
         working_dir: '/docker/home/hasegawa/docker-gpu/'
         tty: true
