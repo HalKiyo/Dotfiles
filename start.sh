@@ -20,6 +20,7 @@ if [ $1 = $pyrun ]; then
         docker compose up -d
     else
         echo "py38 already running"
+    fi
     echo "py38 activated"
     docker compose exec py38 bash
 elif [ $1 = $condarun ]; then
