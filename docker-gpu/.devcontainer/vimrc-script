@@ -73,8 +73,8 @@ call plug#end()
 
 " #######configration of gruvbox#######
 "colorscheme gruvbox
-#set background=dark
-#highlight StatusLine ctermbg=Yellow ctermfg=DarkGray guifg=darkblue guibg=yellow
+"set background=dark
+"highlight StatusLine ctermbg=Yellow ctermfg=DarkGray guifg=darkblue guibg=yellow
 
 " #######configration of coc.nvim######
 nnoremap <silent> <leader>g :call CocAction('diagnosticNext')<CR>
