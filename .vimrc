@@ -26,6 +26,7 @@ syntax on
 set encoding=utf-8
 scriptencoding utf-8
 set confirm
+set paste!
 
 set nowritebackup
 set nobackup
