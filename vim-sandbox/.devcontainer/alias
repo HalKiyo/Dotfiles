@@ -1,3 +1,6 @@
+# mounted windows folder color scheme
+eval $(dircolors -b ~/.dircolors)
+
 #eroorr color scheme
 #color()(set -o pipefail;"$@" 2> >(sed $'s,.*,\e[31m&\e[m,'>&2))
 
