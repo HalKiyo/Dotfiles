@@ -20,3 +20,8 @@ lightgbm
 xgboost
 scikit-learn
 tqdm
+
+jedi==0.17.0
+flake8
+autopep8
+pylint

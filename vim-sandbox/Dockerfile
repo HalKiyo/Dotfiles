@@ -21,7 +21,7 @@ RUN apt-get update && \
 
 # copy dotfiles 
 COPY ./alias /root/.bashrc
-COPY ./vimrctmp /root/.vimrc
+COPY ./vimrc-script /root/.vimrc
 RUN mkdir /root/.vim
 COPY ./cocsettings.json /root/.vim/coc-settings.json
 
