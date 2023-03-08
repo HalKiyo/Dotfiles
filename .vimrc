@@ -74,6 +74,7 @@ set showcmd
 set laststatus=2
 set statusline=%F
 
+let g:coc_disable_startup_warning = 1
 let mapleader = ' '
 
 inoremap <silent> jj <ESC>
