@@ -4,7 +4,7 @@ services:
             dockerfile: ./Dockerfile
         image: vim-sandbox
         env_file:
-            - ./.env_wslg
+            - ./env_wslg
         restart: always
         tty: true
         container_name: 'vim-sandbox'
