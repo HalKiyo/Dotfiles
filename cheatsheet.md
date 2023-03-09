@@ -59,23 +59,27 @@ jupyter:
         tensorflow
         cartopy
 
-### how to use "docker commit" ###
+# how to use "docker commit" 
+<br>
 docker ps
+<br>
 docker images
-
-# if you wanna replace[update] existing image
+<br>
+### if you wanna replace[update] existing image
     docker commit --pause=false [conainer name] [image name:latest]
-# if you wanna create new image
+### if you wanna create new image
     docker commit --pause=false [conainer name] [image name:0]
     cd ~/[image name]/.devcontainer
     vi docker-compose.yml
         edit "image: [image name:0]"
     docker compose exec [image name:0] bash
     docker stop [image name]
+
 docker rm [new container]
+
 docker rmi [new image name]
 
-### fzf cheet sheet ###
+# fzf cheet sheet
 fzf: output result in terminal
 fzf-tmux: open script in a new tmux pane
 ctrl+t: copy&past on command line
