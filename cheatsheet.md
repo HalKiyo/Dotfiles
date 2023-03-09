@@ -40,7 +40,7 @@
         xgboost
         lightgbm
 
-jupyter: 
+# jupyter: 
     ubuntu20.04
     pip
     python==3.8.10
