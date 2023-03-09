@@ -1,43 +1,25 @@
 # py38:
     python:3.8.0-slim-buster
-
     pip
-
     python==3.8.9
-
     modules:
-
         numpy
-
         matplotlib
-
         pandas
-
         chardet
 
 # conda:
     ubuntu:latest
-
     conda(conda-forge, anaconda)
-
     miniconda==py39_4.10.3-Linux-x86_64
-
     python==3.8.5
-
     modules:
-
         numpy
-
         pandas
-
         cartopy
-
         netCDF4
-
         scikit-learn
-
         seaborn
-
         matplotlib
 
 # gpu:
