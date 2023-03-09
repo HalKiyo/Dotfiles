@@ -65,10 +65,10 @@ docker ps
 docker images
 ```
 
-# if you wanna replace[update] existing image
-```shell
+    - if you wanna replace[update] existing image
+    ```shell
     docker commit --pause=false [conainer name] [image name:latest]
-```
+    ```
 
 # if you wanna create new image
 ```shell
