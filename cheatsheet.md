@@ -62,9 +62,10 @@ jupyter:
 ### how to use "docker commit" ###
 docker ps
 docker images
-#if you wanna replace[update] existing image
+
+# if you wanna replace[update] existing image
     docker commit --pause=false [conainer name] [image name:latest]
-#if you wanna create new image
+# if you wanna create new image
     docker commit --pause=false [conainer name] [image name:0]
     cd ~/[image name]/.devcontainer
     vi docker-compose.yml
