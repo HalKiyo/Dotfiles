@@ -60,24 +60,30 @@ jupyter:
         cartopy
 
 # how to use "docker commit" 
-<br>
+```shell
 docker ps
-<br>
 docker images
-<br>
-## if you wanna replace[update] existing image
+```
+
+# if you wanna replace[update] existing image
+```shell
     docker commit --pause=false [conainer name] [image name:latest]
-## if you wanna create new image
-    docker commit --pause=false [conainer name] [image name:0]
-    cd ~/[image name]/.devcontainer
-    vi docker-compose.yml
-        edit "image: [image name:0]"
-    docker compose exec [image name:0] bash
-    docker stop [image name]
+```
 
+# if you wanna create new image
+```shell
+docker commit --pause=false [conainer name] [image name:0]
+cd ~/[image name]/.devcontainer
+vi docker-compose.yml
+    edit "image: [image name:0]"
+docker compose exec [image name:0] bash
+docker stop [image name]
+```
+
+```shell
 docker rm [new container]
-
 docker rmi [new image name]
+```
 
 # fzf cheet sheet
 - fzf: output result in terminal
