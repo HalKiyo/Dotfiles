@@ -81,7 +81,11 @@ docker rmi [new image name]
 
 # fzf cheet sheet
 fzf: output result in terminal
+<br>
 fzf-tmux: open script in a new tmux pane
+<br>
 ctrl+t: copy&past on command line
+<br>
 right alt+c: directory change
+<br>
 ctrl+r: command history
