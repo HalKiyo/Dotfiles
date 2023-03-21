@@ -11,7 +11,7 @@ opencv-python
 
 cartopy==0.21.0
 
-tensorflow
+tensorflow==2.11.0
 tensorflow-addons
 protobuf==3.19.5
 tensorboardX
@@ -20,7 +20,7 @@ xgboost
 scikit-learn
 tqdm
 
-jedi==0.17.0
+jedi==0.18.2
 flake8
 autopep8
 pylint
