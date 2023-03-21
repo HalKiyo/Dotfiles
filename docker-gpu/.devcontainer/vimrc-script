@@ -64,17 +64,11 @@ tnoremap <Esc> <C-w>N
 
 call plug#begin('/root/.vim/plugged')
 
-"Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'vim-python/python-syntax'
 Plug 'cohama/lexima.vim'
 
 call plug#end()
-
-" #######configration of gruvbox#######
-"colorscheme gruvbox
-"set background=dark
-"highlight StatusLine ctermbg=Yellow ctermfg=DarkGray guifg=darkblue guibg=yellow
 
 " #######configration of coc.nvim######
 nnoremap <silent> <leader>g :call CocAction('diagnosticNext')<CR>
