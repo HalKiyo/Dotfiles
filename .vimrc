@@ -22,6 +22,7 @@
 "terminalコマンドのprefixは<C-w>
 
 syntax on
+set re=0 " prevent 'red raw error'
 
 set encoding=utf-8
 scriptencoding utf-8
