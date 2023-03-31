@@ -7,6 +7,9 @@ netCDF4
 Pillow
 seaborn
 matplotlib
+cmaps
+colorcet
+colormaps
 opencv-python
 
 cartopy==0.21.0
