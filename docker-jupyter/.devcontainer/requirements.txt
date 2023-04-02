@@ -28,6 +28,7 @@ opencv-python
 matplotlib
 cartopy
 seaborn
+colormaps
 
 scikit-learn
 pydeps
