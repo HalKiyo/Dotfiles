@@ -57,9 +57,11 @@ inoremap <silent> jj <ESC>
 vnoremap v <C-v>
 nnoremap Y y$
 nnoremap <Esc><Esc> :nohlsearch<CR><ESC>
-nnoremap <silent> <leader>j <C-w>j :q<CR> :bo terminal ++open ++rows=10 python3 %<CR> <C-w>k
+nnoremap <silent> <leader>j <C-w>j <C-w>N :q!<CR> :bo terminal ++open ++rows=10 python3 %<CR> <C-w>k
 nnoremap <silent> <leader>J :bo terminal ++open ++rows=10 python3 %<CR> <C-w>k
-nnoremap <silent> <leader>q <C-w>j :q!<CR> :q<CR>
+nnoremap <silent> <leader>q <C-w>j <C-w>N :q!<CR> :wq<CR>
+tnoremap <silent> <leader>q <C-w>N :q!<CR>
+tnoremap <C-[> <C-w>N
 tnoremap <Esc> <C-w>N
 
 call plug#begin('/root/.vim/plugged')
