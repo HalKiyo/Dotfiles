@@ -23,59 +23,53 @@
 
 syntax on
 set re=0 " prevent 'red raw error'
-
-set encoding=utf-8
-scriptencoding utf-8
+set belloff=all
 set confirm
-set paste!
-
-set nowritebackup
-set nobackup
-set virtualedit=block
-set backspace=indent,eol,start
+scriptencoding utf-8
 
 set ignorecase
 set smartcase
 set wrapscan
 set incsearch
 set hlsearch
-
-set belloff=all
-set shellslash
+set pumheight=3
 set showmatch matchtime=1
 
-set cinoptions+=:1
-set display=lastline
-set list
-set listchars=tab:^\ ,trail:~
-set history=1000
-
-set expandtab
-set tabstop=4 softtabstop=4
-set shiftwidth=4
-
+set clipboard=unnamedplus,autoselect
+set mouse=a
 set guioptions-=T
 set guioptions-=m
 set guioptions-=R
 
-set smartindent
+set nu
+set showcmd
+set guicursor=
+set cursorline
+set laststatus=2
+set statusline=%F
+set display=lastline
+
 set nowrap
+set shellslash
+set list
+set listchars=tab:^\ ,trail:~
+set nrformats=
+set whichwrap=b,s,h,l,<,>,[,],~
+set virtualedit=block
+set backspace=indent,eol,start
+
+set nobackup
+set nowritebackup
 set noswapfile
 set nofoldenable
 
-set clipboard=unnamedplus,autoselect
-set nrformats=
-set whichwrap=b,s,h,l,<,>,[,],~
-set mouse=a
+set expandtab
+set tabstop=4 softtabstop=4
+set shiftwidth=4
+set autoindent
+set smartindent
+set cindent
 
-set nu
-set guicursor=
-set cursorline
-set showcmd
-set laststatus=2
-set statusline=%F
-
-let g:coc_disable_startup_warning = 1
 let mapleader = ' '
 
 inoremap <silent> jj <ESC>
@@ -86,7 +80,6 @@ nnoremap <silent> <leader>j <C-w>j :q<CR> :bo terminal ++open ++rows=10 python3 
 nnoremap <silent> <leader>J :bo terminal ++open ++rows=10 python3 %<CR> <C-w>k
 nnoremap <silent> <leader>q <C-w>j :q!<CR> :q<CR>
 tnoremap <Esc> <C-w>N
-
 
 call plug#begin('/home/hasegawa/.vim/plugged')
 
@@ -105,6 +98,12 @@ set background=dark
 highlight StatusLine ctermbg=Yellow ctermfg=DarkGray guifg=darkblue guibg=yellow
 
 " #######configration of coc.nvim######
+set encoding=utf-8
+set cmdheight=2
+set updatetime=300
+set shortmess+=c
+set signcolumn=yes
+let g:coc_disable_startup_warning = 1
 nnoremap <silent> <leader>g <Plug>(coc-diagnostic-prev)
 nnoremap <silent> <leader>G <Plug>(coc-diagnostic-next)
 
