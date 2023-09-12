@@ -1,0 +1,29 @@
+#powerline configuration
+if [ -f /usr/share/powerline/bindings/bash/powerline.sh ]; then
+    powerline-daemon -q
+    POWERLINE_BASH_CONTINUATION=1
+    POWERLINE_BASH_SELECT=1
+    source /usr/share/powerline/bindings/bash/powerline.sh
+fi
+
+#alias
+alias ..='cd ..'
+alias ls='ls --color'
+alias ll='ls -alh --color'
+alias rm='rm -rfi'
+alias vi='vim'
+
+# path
+export PATH="./:${PATH}"
+export PATH="/usr/local:${PATH}"
+export PATH="/usr/local/bin:${PATH}"
+export LD_LIBRARY_PATH="/usr/local/lib:${LD_LIBRARY_PATH}"
+export LIBRARY_PATH="/usr/local/lib:${LIBRARY_PATH}"
+
+# netcdf-fortran
+export NETCDF_CONFIG="nc-config"
+export NETCDF_ROOT="$(${NETCDF_CONFIG} --prefix)"
+export NETCDF_F_CONFIG="nf-config"
+export NETCDF_F_ROOT="$(${NETCDF_F_CONFIG} --prefix)"
+export LD_LIBRARY_PATH="${NETCDF_CONFIG}/lib:${LD_LIBRARY_PATH}"
+export NETCDF="${NETCDF_ROOT}"

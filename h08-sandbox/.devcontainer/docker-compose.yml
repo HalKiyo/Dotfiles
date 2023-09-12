@@ -1,0 +1,17 @@
+services:
+    h08:
+        build:
+            context: '.'
+            dockerfile: './Dockerfile'
+        image: h08
+        env_file:
+            - ./env_wslg
+        restart: always
+        tty: true
+        container_name: 'h08'
+        working_dir: '/docker/mnt/h/docker-h08/H08_20230612'
+        volumes:
+            - /:/docker
+            - /mnt/wslg:/mnt/wslg
+            - /tmp/.X11-unix:/tmp/.X11-unix
+

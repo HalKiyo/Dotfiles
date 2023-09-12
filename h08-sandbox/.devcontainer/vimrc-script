@@ -1,0 +1,68 @@
+syntax on
+set re=0 " prevent 'red raw error'
+set belloff=all
+set confirm
+scriptencoding utf-8
+
+set ignorecase
+set smartcase
+set wrapscan
+set incsearch
+set hlsearch
+set pumheight=3
+set showmatch matchtime=1
+
+set clipboard=unnamedplus,autoselect
+set mouse=a
+set guioptions-=T
+set guioptions-=m
+set guioptions-=R
+
+set nu
+set showcmd
+set guicursor=
+set cursorline
+set laststatus=2
+set statusline=%F
+set display=lastline
+
+set nowrap
+set shellslash
+set list
+set listchars=tab:^\ ,trail:~
+set nrformats=
+set whichwrap=b,s,h,l,<,>,[,],~
+set virtualedit=block
+set backspace=indent,eol,start
+
+set nobackup
+set nowritebackup
+set noswapfile
+set nofoldenable
+
+set expandtab
+set tabstop=4 softtabstop=4
+set shiftwidth=4
+set autoindent
+set smartindent
+set cindent
+
+let g:coc_disable_startup_warning = 1
+let mapleader = ' '
+
+inoremap <silent> jj <ESC>
+vnoremap v <C-v>
+nnoremap Y y$
+nnoremap <Esc><Esc> :nohlsearch<CR><ESC>
+
+call plug#begin('/root/.vim/plugged')
+
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'cohama/lexima.vim'
+
+call plug#end()
+
+" #######configration of coc.nvim######
+nnoremap <silent> <leader>g :call CocAction('diagnosticNext')<CR>
+nnoremap <silent> <leader>G :call CocAction('diagnosticPrevious')<CR>
+ 
