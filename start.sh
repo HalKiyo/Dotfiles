@@ -4,15 +4,18 @@ pyrun=-py38
 condarun=-conda
 gpurun=-gpu
 jupyterrun=-jupyter
+h08run=-h08
 down=-down
 containeridpy38=`docker ps -a | grep py38 | awk '{print $(NF-0)}'`
 containeridconda=`docker ps -a | grep conda | awk '{print $(NF-0)}'`
 containeridgpu=`docker ps -a | grep gpu | awk '{print $(NF-0)}'`
 containeridjupyter=`docker ps -a | grep jupyter | awk '{print $(NF-0)}'`
+containeridh08=`docker ps -a | grep h08 | awk '{print $(NF-0)}'`
 py38=py38
 conda=conda
 gpu=gpu
 jupyter=jupyter
+h08=h08
 #set -x
 if [ $1 = $pyrun ]; then
     cd ~/docker-python/.devcontainer
@@ -50,6 +53,15 @@ elif [ $1 = $jupyterrun ]; then
     fi
     echo "jupyter activated"
     docker compose exec jupyter bash
+elif [ $1 = $h08run ]; then
+    cd /mnt/h/docker-h08/.devcontainer
+    if [ "$containeridh08" != $h08 ]; then
+        docker compose up -d
+    else
+        echo "h08 already running"
+    fi
+    echo "h08 activated"
+    docker compose exec h08 bash
 elif [ $1 = $down ]; then
     if [ "$containeridpy38" = $py38 ]; then
         cd ~/docker-python/.devcontainer
@@ -71,5 +83,6 @@ else
     echo "-conda"
     echo "-gpu"
     echo "-jupyter"
+    echo "-h08"
     echo "-down"
 fi
