@@ -54,7 +54,7 @@ elif [ $1 = $jupyterrun ]; then
     echo "jupyter activated"
     docker compose exec jupyter bash
 elif [ $1 = $h08run ]; then
-    cd /mnt/h/docker-h08/.devcontainer
+    cd ~/h08-sandbox/.devcontainer
     if [ "$containeridh08" != $h08 ]; then
         docker compose up -d
     else
@@ -72,8 +72,11 @@ elif [ $1 = $down ]; then
     elif [ "$containeridgpu" = $gpu ]; then
         cd ~/docker-gpu/.devcontainer
         docker compose down --remove-orphans
-    elif [ "$containeridgpu" = $jupyter ]; then
+    elif [ "$containeridjupyter" = $jupyter ]; then
         cd ~/docker-jupyter/.devcontainer
+        docker compose down --remove-orphans
+    elif [ "$containeridh08" = $h08 ]; then
+        cd ~/h08-sandbox/.devcontainer
         docker compose down --remove-orphans
     fi
 else

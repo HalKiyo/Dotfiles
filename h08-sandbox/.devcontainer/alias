@@ -12,6 +12,7 @@ alias ls='ls --color'
 alias ll='ls -alh --color'
 alias rm='rm -rfi'
 alias vi='vim'
+alias hh='cd /h/docker-h08/H08_20230612'
 
 # path
 export PATH="./:${PATH}"
