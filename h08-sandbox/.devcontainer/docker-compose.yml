@@ -9,9 +9,9 @@ services:
         restart: always
         tty: true
         container_name: 'h08'
-        working_dir: '/mnt/h/docker-h08/H08_20230612/'
+        working_dir: '/mnt/f/docker-h08/H08_20230612/'
         volumes:
-            - /mnt/h:/mnt/h
+            - /mnt/f:/mnt/f
             - /mnt/wslg:/mnt/wslg
             - /tmp/.X11-unix:/tmp/.X11-unix
 
